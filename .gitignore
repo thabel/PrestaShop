@@ -157,8 +157,8 @@ app/config/config.php
 
 modules/*
 override/*
-themes/*/
 themes/classic
+themes/hummingbird
 !themes/_core
 !themes/_libraries
 

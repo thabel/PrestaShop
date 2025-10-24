@@ -1,0 +1,58 @@
+.carousel .carousel-caption{
+  transform:none;
+}
+
+.vertical-menu {
+  width: 220px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  position: relative;
+}
+
+.vertical-menu .menu-item {
+  position: relative;
+}
+
+.vertical-menu .menu-link {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.vertical-menu .menu-link:hover {
+  background-color: #f8f9fa;
+}
+
+.vertical-menu .submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 750px;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  z-index: 10;
+}
+
+.vertical-menu .submenu-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.vertical-menu .submenu-section {
+  width: 220px;
+}
+
+.vertical-menu .menu-item:hover > .submenu {
+  display: block;
+}
+
+.vertical-menu .submenu a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
