@@ -33,34 +33,21 @@
       <div class="row gx-2 align-items-stretch {$headerBottomName}__row">
         <div class="d-flex align-items-center  logo order-xl-1 ms-lg-0 ms-2 me-lg-0 me-auto line">
           {if $shop.logo_details}
-            {if $page.page_name == 'index'}<h1 class="{$headerBottomName}__h1 mb-0">{/if}
+            {if $page.page_name == 'index'}<h1 class="{$headerBottomName}__h1 mb-0" id="logo_h1">{/if}
               {renderLogo}
             {if $page.page_name == 'index'}</h1>{/if}
           {/if}
                         {hook h='displaySearch'}
 
-        </div>
 
-        <div class="search__mobile d-md-none d-flex col-auto">
+                        <div class="search__mobile d-md-none d-flex col-auto">
 
-          <div class="header-block d-flex align-items-center">
-            <a class="header-block__action-btn" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#searchCanvas" aria-controls="searchCanvas" aria-label="{l s='Show search bar' d='Shop.Theme.Global'}">
-              <span class="material-icons header-block__icon">search</span>
-            </a>
-          </div>
+       
 
-          <div class="search__offcanvas js-search-offcanvas offcanvas offcanvas-top h-auto" data-bs-backdrop="false" data-bs-scroll="true" tabindex="-1" id="searchCanvas" aria-labelledby="offcanvasTopLabel">
-            <div class="offcanvas-header">
-              <div id="_mobile_search" class="search__container"></div>
-              <button type="button" class="btn-close text-reset ms-1" data-bs-dismiss="offcanvas" aria-label="Close">{l s='Cancel' d='Shop.Theme.Global'}</button>
-            </div>
-          </div>
-        </div>
+         
 
-      
-      
-
-        <div id="_mobile_user_info" class="d-md-none d-flex col-auto">
+ <div id="_mobile_user_info" class="d-md-none d-flex col-auto">
+          
           {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
           <div class="header-block">
             <span class="header-block__action-btn">
@@ -81,6 +68,33 @@
           </div>
           {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
         </div>
+
+        </div>
+
+        </div>
+
+        
+
+      <div class="hidden-md">
+        
+
+        
+<div id="search_widget" class="search-widget" data-search-controller-url="{$search_controller_url}">
+<!-- 	<span class="search_button"></span> -->	
+	<form method="get" action="#">
+		<input type="hidden" name="controller" value="search">
+		<input type="text" name="s" value="{$search_string}" placeholder="{l s='Search our catalog' d='Shop.Theme.Catalog'}" aria-label="{l s='Search' d='Shop.Theme.Catalog'}">
+		<button type="submit">
+			<span class="aei-search-icon">Search</span>
+		</button>
+	</form>
+</div>
+
+
+      </div>
+      
+
+       
       </div>
       
 
@@ -90,15 +104,31 @@
   {hook h='displayNavFullWidth'}
 
   <style>
+@media (min-width: 768px) {
+ .hidden-md{
+  display: none;
+ }
+h1#logo_h1 img.logo.img-fluid{
+        width: 100%;
+        height: 100%;
+    }
+ 
 
-  .line {
+  
+}
+
+.header-bottom {
+     
+      padding: 1rem 0;
+    }
+ .line {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-    .header-bottom {
-     
-      padding: 1rem 0;
+ 
+   #logo_h1 img.logo.img-fluid{
+        width: 80px;
     }
   </style>
 {/block}
