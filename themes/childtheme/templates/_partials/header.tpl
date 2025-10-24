@@ -31,12 +31,14 @@
   <div class="{$headerBottomName}" >
     <div class="container-md {$headerBottomName}__container">
       <div class="row gx-2 align-items-stretch {$headerBottomName}__row">
-        <div class="d-flex align-items-center col-auto logo order-xl-1 ms-lg-0 ms-2 me-lg-0 me-auto">
+        <div class="d-flex align-items-center  logo order-xl-1 ms-lg-0 ms-2 me-lg-0 me-auto line">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}<h1 class="{$headerBottomName}__h1 mb-0">{/if}
               {renderLogo}
             {if $page.page_name == 'index'}</h1>{/if}
           {/if}
+                        {hook h='displaySearch'}
+
         </div>
 
         <div class="search__mobile d-md-none d-flex col-auto">
@@ -55,7 +57,7 @@
           </div>
         </div>
 
-        {hook h='displayTop'}
+      
       
 
         <div id="_mobile_user_info" class="d-md-none d-flex col-auto">
@@ -80,6 +82,8 @@
           {* JUST PLACEHOLDER FOR RESPONSIVE COMPONENT TO LOAD REAL ONE *}
         </div>
       </div>
+      
+
     </div>
   </div>
 
@@ -87,7 +91,11 @@
 
   <style>
 
-
+  .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
     .header-bottom {
      
       padding: 1rem 0;
