@@ -1,0 +1,7 @@
+parent: classic
+name: laboiteatechtheme
+display_name: La boiteatech.ma customized theme
+version: 1.0.0
+assets:
+  use_parent_assets: true
+

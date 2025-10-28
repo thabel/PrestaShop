@@ -132,6 +132,8 @@ themes/core.js.map
 themes/core.js
 themes/*-chunk.js
 themes/*-chunk.js.map
+themes/hummingbird/*
+hemes/childtheme
 
 # Install folder
 /install-dev/theme/custom/*
@@ -158,7 +160,6 @@ app/config/config.php
 modules/*
 override/*
 themes/classic
-themes/hummingbird
 !themes/_core
 !themes/_libraries
 
