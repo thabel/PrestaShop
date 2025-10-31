@@ -15,11 +15,19 @@
   --transition: all 0.3s ease;
 }
 
+body{
+    background-color: var(--brand-color-primary);
+    color: var(--text-color);
+}
 
 /*Menus*/
 #mobile_top_menu_wrapper,
 #mobile_top_menu_wrapper .top-menu .sub-menu {
     background-color: var(--brand-color-primary);
+    width: 100%;
+}
+#header .header-top>.container>.row:first-of-type {
+  flex-direction: column;
 }
 
 #mobile_top_menu_wrapper .js-top-menu-bottom a {
@@ -129,6 +137,9 @@ a:hover {
     border-radius: 0;
 }
 
+#header .header-top .position-static{
+  order: 1;
+}
 
 #search_widget  .btn-primary {
     background-color: var(--brand-color-secondary);
@@ -180,7 +191,7 @@ a:hover {
 }
 
 .searchs_and_signing{
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -393,11 +404,18 @@ a:hover {
     background-color: var(--brand-color-primary);
     color: var(--color-text);
 }
+    .footer-container .links ul{
+      background-color: var(--brand-color-primary) !important;
+    }
 .block_newsletter{
     background-color: inherit;
 }
+    .footer-container .links ul>li a{
+    color: var(--color-text) !important;
+    } 
 
-.block_newsletter #block-newsletter-label{
+.block_newsletter #block-newsletter-label,
+.footer-container .h3, .footer-container .h4{
     color: var(--color-text);
 }
  .block_newsletter form .row .col-xs-12:last-of-type  p{
@@ -422,6 +440,13 @@ a:hover {
  #footer .block-social ul li{
   background-color: transparent;
  }
+ #header > div.header-top > div > div > div.header-top-right.col-md-10.col-sm-12.position-static > div > div{
+  display: flex;
+ }
+
+ .no-account a{
+    color: var(--brand-color-secondary);
+ }
 /* 
  * sm: ≥ 640px — Small devices (e.g., large phones, small tablets)
  */
@@ -431,6 +456,10 @@ a:hover {
  * md: ≥ 768px — Medium devices (e.g., tablets, small laptops)
  */
 @media (min-width: 768px) {
+  #header .header-top>.container>.row:first-of-type {
+  flex-direction: row;
+}
+      
   .searchs_and_signing #search_widget{
   width: auto;
 }

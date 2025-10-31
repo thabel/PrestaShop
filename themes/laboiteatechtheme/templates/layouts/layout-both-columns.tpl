@@ -52,8 +52,11 @@
       </header>
 
       <section id="wrapper">
-      <div class="hidden md-block category-top">
+      <div class=" md-block category-top">
+        <div class="hidden md-block category-top">
          {hook h='displayTop'}
+
+        </div>
       </div>
         {block name='notifications'}
           {include file='_partials/notifications.tpl'}
