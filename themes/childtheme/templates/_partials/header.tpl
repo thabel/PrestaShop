@@ -42,9 +42,13 @@
 
                         <div class="search__mobile d-md-none d-flex col-auto">
 
-       
+          <div class="header-block d-flex align-items-center">
+            <a class="header-block__action-btn" href="#" role="button" data-bs-toggle="offcanvas" data-bs-target="#searchCanvas" aria-controls="searchCanvas" aria-label="{l s='Show search bar' d='Shop.Theme.Global'}">
+              <span class="material-icons header-block__icon">search</span>
+            </a>
+          </div>
 
-         
+        
 
  <div id="_mobile_user_info" class="d-md-none d-flex col-auto">
           
@@ -75,28 +79,21 @@
 
         
 
-      <div class="hidden-md">
-        
-
-        
-<div id="search_widget" class="search-widget" data-search-controller-url="{$search_controller_url}">
-<!-- 	<span class="search_button"></span> -->	
-	<form method="get" action="#">
-		<input type="hidden" name="controller" value="search">
-		<input type="text" name="s" value="{$search_string}" placeholder="{l s='Search our catalog' d='Shop.Theme.Catalog'}" aria-label="{l s='Search' d='Shop.Theme.Catalog'}">
-		<button type="submit">
-			<span class="aei-search-icon">Search</span>
-		</button>
-	</form>
-</div>
-
-
-      </div>
+<div class="d-flex align-items-center  logo order-xl-1 ms-lg-0 ms-2 me-lg-0 me-auto line">
+    <div class="  h-auto show width-full search_mobile" data-bs-backdrop="false" data-bs-scroll="true" tabindex="-1" id="searchCanvas" aria-labelledby="offcanvasTopLabel">
+            <div class="offcanvas-header">
+              <div id="_mobile_search" class="search__container"></div>
+            </div>
+          </div>
+</div>      
       
 
        
       </div>
-      
+      <div class="mainmenu">
+ {hook h='displayTop'}
+      </div>
+                        
 
     </div>
   </div>
@@ -104,17 +101,34 @@
   {hook h='displayNavFullWidth'}
 
   <style>
+.mainmenu{
+  border-top: var(--header-bottom-border-bottom);
+}
+    
 @media (min-width: 768px) {
- .hidden-md{
-  display: none;
- }
+ 
 h1#logo_h1 img.logo.img-fluid{
-        width: 100%;
-        height: 100%;
+        width: 70%;
     }
  
 
-  
+  #search_widget form input,
+.search-widget form input[type=text] {
+	color: #949292;
+	border:none;
+	height: 50px;
+	font-weight: 200;
+	letter-spacing: 0.72px;
+	padding:0;
+	background-color: transparent;
+	min-width: 477px;
+	padding: 0 45px 0 20px;
+	border:1px solid rgba(0,0,0,.1);
+}
+}
+.search-widget form input[type=text]{
+  	height: 50px;
+
 }
 
 .header-bottom {
@@ -130,5 +144,16 @@ h1#logo_h1 img.logo.img-fluid{
    #logo_h1 img.logo.img-fluid{
         width: 80px;
     }
+    .width-full {
+        width: 100%;
+    }
+    .search_mobile{
+      margin-top: 1rem;
+      
+    }
+    
+
+
+
   </style>
 {/block}
