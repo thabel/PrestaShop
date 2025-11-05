@@ -1,0 +1,7 @@
+parent: classic
+name: laboiteatech
+display_name: Theme La Boite A Tech inspiré du logo de l'entreprise
+version: 1.0.0
+assets:
+  use_parent_assets: true
+

@@ -1,0 +1,268 @@
+:root {
+    --color-text: #ffffff;
+    --brand-color-primary: #060030;
+    --brand-color-primary-light: #34344e ;
+    --brand-color-secondary: #434999;
+    --brand-color-secondary-light: #5c63c9;
+    --border-color-header: #333766;
+    --brand-light: #48d4f0;
+     --primary-color: #3ca0e7;
+  --primary-dark: #2d8cd0;
+  --text-color: #494040;
+  --text-light: #666666;
+  --background-color: #ffffff;
+  --hover-bg: #f8f9fa;
+  --border-color: #e9ecef;
+  --shadow: 0px 3px 5px -1px rgba(0,0,0,0.1);
+  --transition: all 0.3s ease;
+}
+
+body{
+ 
+    color: var(--text-color);
+}
+.flex{
+    display: flex;
+   
+}
+
+#mobile_top_menu_wrapper {
+    padding: 0;
+    background-color: transparent;
+}
+
+/* Btns */
+.btn-primary {
+    background-color: var(--brand-color-secondary); 
+    color: var(--color-text) ;
+}
+#header .header-top{
+    background-color: var(--brand-color-primary);
+    padding: 1em  0;
+    color: var(--color-text);
+}
+#header a,
+#header .header-nav .cart-preview .shopping-cart,
+#header .header-nav #menu-icon .material-icons{
+    color: var(--color-text);
+}
+#header a:hover{
+    text-decoration: underline;
+     color: var(--color-text);
+}
+#header #_desktop_top_menu{
+    /* display: none;p */
+}
+
+.btn-primary:hover {
+    background-color: var(--brand-color-secondary-light);
+    color: var(--color-text);
+}
+#header .header-nav .blockcart{
+    background-color: transparent;
+    color: var(--color-text);
+}
+.logo-and-menu  {
+  
+    gap: 2em;
+}
+.header-right-side{
+    flex-grow: 1;
+  
+    align-items: center;
+
+}
+#header .logo {
+    display: block;
+    height: 100%;
+    max-height: 3rem;
+    max-width: 9rem;
+    width: 100%;
+}
+
+#header .header-nav {
+    background-color: var(--brand-color-primary-light);
+        border-bottom-width: 0px;
+        font-size: .875rem;
+        /* padding: 1em 0; */
+}
+
+#search_widget form i{
+    color: var(--brand-color-primary-light);
+}
+#search_widget form input{
+    background-color: var(--background-color);
+}
+.btn.allcategories{
+   background-color: transparent;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border: 1px solid var(--color-text);
+    padding: 0.3em 1em;
+    border-radius: 5px;
+}
+.btn.allcategories:hover{
+    background-color: var(--background-color);
+    color: var(--brand-color-primary);
+    border: 1px solid var(--color-text);
+}
+#header .header-top>.container>.row:first-of-type {
+    gap: 2em;
+    justify-content: space-between;
+    height: min-content
+}
+.btn.allcategories:focus{
+   outline: none;
+}
+#menu-side-bar{
+    display: none;
+}
+/*Footer */
+#footer {
+    background-color: var(--brand-color-primary);
+    color: var(--color-text);
+}
+    .footer-container .links ul{
+      background-color: var(--brand-color-primary) !important;
+    }
+.block_newsletter{
+    background-color: inherit;
+}
+    .footer-container .links ul>li a{
+    color: var(--color-text) !important;
+    } 
+
+.block_newsletter #block-newsletter-label,
+.footer-container .h3, .footer-container .h4{
+    color: var(--color-text);
+}
+ .block_newsletter form .row .col-xs-12:last-of-type  p{
+    color: var(--color-text);}
+
+ .footer-container p,
+ #footer_sub_menu_1 li a,
+ #footer_sub_menu_2 li a{
+    color: var(--color-text);
+ }
+ #block_myaccount_infos .myaccount-title a,
+  .block-contact .block-contact-title{
+    color: var(--color-text);
+ 
+ }
+ .block-contact, .footer-container li a {
+    color: var(--color-text);
+ }
+ a{
+    color: var(--brand-color-secondary);
+ }
+ a:hover,
+ #header .top-menu a[data-depth="0"]:hover, a:hover,
+ .carousel .carousel-control .icon-next:hover i, .carousel .carousel-control .icon-prev:hover i, .dropdown:hover .expand-more, .page-my-account #content .links a:hover i, .search-widget form button[type=submit] .search:hover, .top-menu .sub-menu a:hover{
+    color: var(--brand-color-secondary-light);
+ }
+ #footer .block-social ul li{
+  background-color: transparent;
+ }
+ #header > div.header-top > div > div > div.header-top-right.col-md-10.col-sm-12.position-static > div > div{
+  display: flex;
+ }
+
+ .no-account a{
+    color: var(--brand-color-secondary);
+ }
+     .header-top .search-widgets{
+        margin-bottom: 0px;
+     }
+      .header-top .search-widgets{
+            max-width: 100%;
+        }
+
+        .product-flags li.product-flag{
+            background-color: var(--brand-color-secondary);
+            color: var(--color-text);
+        }
+
+#wrapper{
+    background-color: #f1f3f4;
+}
+body{
+    font-family: Roboto, sans-serif;
+}
+
+#header .header-nav .cart-preview.active{
+    background-color: var(--brand-color-secondary);
+}
+.btn-comment, .btn-comment-inverse{
+    background-color: var(--brand-color-secondary);
+    color: var(--color-text);
+}
+.product-images>li.thumb-container .thumb.selected, .product-images>li.thumb-container .thumb:hover {
+    border-color: var(--brand-color-secondary);
+}
+
+.tabs .nav-tabs .nav-link.active{
+    color: var(--brand-color-secondary);
+}
+.tabs .nav-tabs .nav-link.active, .tabs .nav-tabs .nav-link:hover{
+    border-bottom-color: var(--brand-color-secondary);
+}
+.btn-primary.active, .btn-primary:active, .open>.btn-primary.dropdown-toggle{
+    background-color: var(--brand-color-secondary);
+    color: var(--color-text);
+}
+
+.page-my-account #content .links a i {
+    color: var(--brand-color-secondary);
+}
+/* 
+ * sm: ≥ 640px — Small devices (e.g., large phones, small tablets)
+ */
+@media (min-width: 640px) {
+        .header-top .search-widgets{
+            max-width: 100%;
+        }
+}
+
+/* 
+ * md: ≥ 768px — Medium devices (e.g., tablets, small laptops)
+ */
+@media (min-width: 768px) {
+
+#menu-side-bar{
+    display: inline-flex;
+    
+}
+}
+
+/* 
+ * lg: ≥ 1024px — Large devices (e.g., desktops, laptops)
+ */
+
+
+@media (min-width: 1024px) {
+    #header .logo {
+        /* max-width: 111px; */
+        
+    }
+.header-right-side{
+    gap: 2em;
+}
+    #search_widget{
+        width: 400px;
+    }
+}
+
+
+/* 
+ * xl: ≥ 1280px — Extra large screens (e.g., large desktops, wide monitors)
+ */
+@media (min-width: 1280px) {
+  
+}
+
+/* 
+ * 2xl: ≥ 1536px — Very large screens (e.g., 4K monitors)
+ */
+@media (min-width: 1536px) {}
