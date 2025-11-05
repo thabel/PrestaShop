@@ -16,7 +16,14 @@
   --shadow: 0px 3px 5px -1px rgba(0,0,0,0.1);
   --transition: all 0.3s ease;
 }
-
+#contact-infos > a,
+#footer > div.footer-container > div > div:nth-child(3) > div > p > a{
+    color: var(--color-text);
+}
+.btn-primary.disabled:hover, .btn-primary:disabled:hover{
+    background-color: var(--brand-color-secondary);
+    color: var(--color-text);
+}
 body{
  
     color: var(--text-color);
@@ -83,7 +90,7 @@ body{
 #header .header-nav {
     background-color: var(--brand-color-primary-light);
         border-bottom-width: 0px;
-        font-size: .875rem;
+        /* font-size: .875rem; */
         /* padding: 1em 0; */
 }
 
