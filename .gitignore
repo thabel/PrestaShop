@@ -133,8 +133,8 @@ themes/core.js
 themes/*-chunk.js
 themes/*-chunk.js.map
 themes/hummingbird/*
-hemes/childtheme
-
+themes/childtheme
+!themes/classic
 # Install folder
 /install-dev/theme/custom/*
 !/install-dev/theme/custom/.gitkeep
