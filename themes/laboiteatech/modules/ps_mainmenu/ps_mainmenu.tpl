@@ -34,6 +34,60 @@
   {/if}
 {/function}
 
+{function name="renderdesktopmenu" nodes=[] depth=0}
+  {if $depth == 0}
+    <nav class="desktop-navigation-menu">
+      <div class="container">
+        <ul class="desktop-menu-category-list">
+          
+          {* Home - fixe *}
+          <li class="menu-category">
+            <a href="#" class="menu-title">Home</a>
+          </li>
+
+          {* Categories - mega menu avec toutes les catégories principales *}
+          <li class="menu-category">
+            <a href="#" class="menu-title">Categories</a>
+            <div class="dropdown-panel">
+              {foreach $nodes as $node}
+                <ul class="dropdown-panel-list">
+                  <li class="menu-title">
+                    <a href="{$node.url}">{$node.label}</a>
+                  </li>
+                  {if $node.children && !empty($node.children)}
+                    {foreach $node.children as $child}
+                      <li class="panel-list-item">
+                        <a href="{$child.url}">{$child.label}</a>
+                      </li>
+                    {/foreach}
+                  {/if}
+                </ul>
+              {/foreach}
+            </div>
+          </li>
+
+          {* Les catégories principales individuelles *}
+          {foreach $nodes as $node}
+            <li class="menu-category">
+              <a href="{$node.url}" class="menu-title">{$node.label}</a>
+              {if $node.children && !empty($node.children)}
+                <ul class="dropdown-list">
+                  {foreach $node.children as $child}
+                    <li class="dropdown-item">
+                      <a href="{$child.url}">{$child.label}</a>
+                    </li>
+                  {/foreach}
+                </ul>
+              {/if}
+            </li>
+          {/foreach}
+
+        </ul>
+      </div>
+    </nav>
+  {/if}
+{/function}
+
 <div id="_desktop_top_menu" class="menu-side-bar" hidden>
   <div class="menu-overlay"></div>
   <div class="menu-panel">
@@ -43,6 +97,9 @@
     </div>
     {menu nodes=$menu.children}
   </div>
+</div>
+<div class="showonlyincustomid">
+ {renderdesktopmenu nodes=$menu.children}
 </div>
 
 <style>
@@ -341,18 +398,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('_desktop_top_menu');
   const panel = sidebar.querySelector('.menu-panel');
   const menuButton = document.getElementById('menu-side-bar');
-  const menuIcon = document.getElementById('menu-icon2');
+  const menuIcon = document.getElementById('menu-icon');
   const closeButton = sidebar.querySelector('.menu-close');
+    const mobileMenu = document.getElementById('mobile_top_menu_wrapper');
+
 
   let currentMenu = panel.querySelector('ul.menu-level[data-depth="0"]');
 
   
     // Open sidebar
-  menuIcon?.addEventListener('click', () => {
-    sidebar.hidden = false;
-    sidebar.classList.add('active');
-    // Reset to main menu when opening
-    resetToMainMenu();
+   closeButton.addEventListener('click', () => {
+      mobileMenu.style.display = 'none';
+      document.querySelector("#wrapper").style.display = 'block';
+    
   });
 
   // Open sidebar
@@ -371,8 +429,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Click on chevron button → navigate to children
   panel.addEventListener('click', (e) => {
+    console.log('Clicked in panel', panel.children);
+    console.log(e.target);
     const chevronBtn = e.target.closest('.menu-chevron-btn');
-    if (!chevronBtn) return;
+    if (!chevronBtn) {
+      // what's being clicked if not chevron?
+      console.log('Clicked element:', e.target);
+      console.log('No chevron button found');
+      return;
+    };
     e.preventDefault();
     e.stopPropagation();
 
@@ -384,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
       childMenu.style.left = '0';
       currentMenu = childMenu;
     }
-  });
+  },true);
 
   // Handle "back" button
   panel.addEventListener('click', (e) => {
@@ -405,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // If no parent menu found, reset to main menu
       resetToMainMenu();
     }
-  });
+  },true);
 
   // Click outside closes sidebar
   document.addEventListener('click', (e) => {

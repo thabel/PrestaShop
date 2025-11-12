@@ -82,6 +82,11 @@
          </div>
         <div class="header-right-side">
           {hook h='displayTop'}
+          <div class="desktop-only">
+    {hook h='displayNav2'}
+           {hook h='displayNav1'}
+          </div>
+       
         </div>
       
          
