@@ -320,6 +320,9 @@ body{
 
 
 @media (min-width: 1024px) {
+    .lg-hidden{
+    display: none;
+}
     #customid{
         display: block;
     }
@@ -603,3 +606,4 @@ body{
 .block_newsletter form input[type=email]:focus{
     border-color: var(--brand-color-secondary);
 }
+
