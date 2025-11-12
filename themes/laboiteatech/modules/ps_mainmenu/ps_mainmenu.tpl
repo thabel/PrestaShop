@@ -398,19 +398,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const sidebar = document.getElementById('_desktop_top_menu');
   const panel = sidebar.querySelector('.menu-panel');
   const menuButton = document.getElementById('menu-side-bar');
-  const menuIcon = document.getElementById('menu-icon');
+  const menuIcon = document.getElementById('menu-icon2');
   const closeButton = sidebar.querySelector('.menu-close');
-    const mobileMenu = document.getElementById('mobile_top_menu_wrapper');
-
+      const mobileMenu = document.getElementById('mobile_top_menu_wrapper');
 
   let currentMenu = panel.querySelector('ul.menu-level[data-depth="0"]');
 
   
     // Open sidebar
-   closeButton.addEventListener('click', () => {
-      mobileMenu.style.display = 'none';
-      document.querySelector("#wrapper").style.display = 'block';
-    
+  menuIcon?.addEventListener('click', () => {
+    sidebar.hidden = false;
+    sidebar.classList.add('active');
+    // Reset to main menu when opening
+    resetToMainMenu();
   });
 
   // Open sidebar
@@ -431,6 +431,11 @@ document.addEventListener('DOMContentLoaded', () => {
   panel.addEventListener('click', (e) => {
     console.log('Clicked in panel', panel.children);
     console.log(e.target);
+    if (e.target.closest(".menu-close")) {
+      mobileMenu.style.display = "none";
+      document.querySelector('#wrapper').style.display = "block";
+      return;
+    }
     const chevronBtn = e.target.closest('.menu-chevron-btn');
     if (!chevronBtn) {
       // what's being clicked if not chevron?
