@@ -3,9 +3,9 @@
   
   <div id="custom-text">
     <div class="container">
-      <!-- {$menu|print_r} -->
+      
 
-  <img src="{$urls.child_img_url}/first.jpg">
+  <img src="{$urls.child_theme_assets}img/first.jpg">
      <!-- add image here using css -->
     </div>
   </div>

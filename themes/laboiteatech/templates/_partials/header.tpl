@@ -106,3 +106,71 @@
   </div>
   {hook h='displayNavFullWidth'}
 {/block}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const menuIconMobile = document.getElementById('menu-icon');
+        const mobileMenu = document.getElementById('mobile_top_menu_wrapper');
+
+
+  menuIconMobile?.addEventListener('click', () => {
+    const mobileMenuWrapper = document.getElementById('mobile_top_menu_wrapper');
+     const panel2 = document.querySelector("#_mobile_top_menu > div.menu-panel");
+    let currentMenu2 = panel2.querySelector('ul.menu-level[data-depth="0"]');
+
+
+   panel2.addEventListener('click', (e) => {
+    console.log('Clicked in panel2', panel2.children);
+    console.log(e.target);
+    if (e.target.closest(".menu-close")) {
+      mobileMenu.style.display = "none";
+      document.querySelector('#wrapper').style.display = "block";
+      return;
+    }
+    const chevronBtn = e.target.closest('.menu-chevron-btn');
+    if (!chevronBtn) {
+      // what's being clicked if not chevron?
+      console.log('Clicked element:', e.target);
+      console.log('No chevron button found');
+      return;
+    };
+    e.preventDefault();
+    e.stopPropagation();
+
+    const item = chevronBtn.closest('.menu-item');
+    const childMenu = item.querySelector('.menu-children');
+    if (childMenu) {
+      currentMenu2.style.left = '-100%';
+      childMenu.hidden = false;
+      childMenu.style.left = '0';
+      currentMenu2 = childMenu;
+    }
+  },true);
+
+   panel2.addEventListener('click', (e) => {
+    if (!e.target.closest('.menu-back')) return;
+    const childMenu = e.target.closest('.menu-children');
+    if (!childMenu) return;
+
+    const parentMenu = childMenu.closest('.menu-item')?.closest('ul.menu-level');
+    if (parentMenu) {
+      childMenu.style.left = '100%';
+      parentMenu.style.left = '0';
+      currentMenu2 = parentMenu;
+      // Hide child menu after transition
+      setTimeout(() => {
+        childMenu.hidden = true;
+      }, 300);
+    } else {
+      // If no parent menu found, reset to main menu
+      resetToMainMenu();
+    }
+  },true);
+
+
+
+
+
+  });
+});
+</script>
