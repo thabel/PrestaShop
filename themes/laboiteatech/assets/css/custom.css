@@ -607,3 +607,14 @@ body{
     border-color: var(--brand-color-secondary);
 }
 
+#layout-error{
+    background-color: var(--brand-color-primary);
+}
+
+#product-details > div.product-manufacturer > a > img{
+    height: 36px;
+}
+
+#subcategories{
+    display: none;
+}
